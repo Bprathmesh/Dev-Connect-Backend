@@ -1,0 +1,82 @@
+//Designing Dev Tinder 
+/*
+WaterFall Model  , SDLC software development life cycle method 
+Requirement Gathering features how why (job is of Project Manager) also work with designer to make ui mocks 
+    -->Design not ui design , a design doc by tech team senior engineers and engineering manager  thinking on architecture communication hld lld 
+            -->Development ->intern sde 1 sde 2 ~~also write unit test case , devops engineering team managing server 
+                     -->Testing ->sdet tester team 
+                            -->Deployment
+                                    -->Maintainence again a part 
+
+
+
+
+Monolith vs micro architecture                                                       mutiple small thing (service -project,application ,featuirex    )
+you have one big single project which does everything                                       microservice small service for notification fe be individually in large company there are small projects handled by different team 
+it has fe be authenticate analytics email db 
+
+
+dev speed          faster in micro service    lot of people working in same code monolith                              
+fault isolation if there is breaking change in monolith whole system crash where as micro service that service crash 
+code repo        bigger in mono lith     single big repo                                                                        
+testing  micro service can be tested independentlt monolith we write integration test  , micro service is tough 
+Scalability challenging in monolith easy in microservice
+delpoyment  single deployment in monolith , micro service deploy every service together 
+techstack  monolith is restrictive , micro service can choose anything for any service 
+infra cost more in microservices as we have to manage infra according to services 
+
+complexity  tough initially in microservice but as system grow easier on micro service ~!mono lith 
+industry moving from monolith to microservice 
+ownership -> diff team takes ownership of different services  
+Maintainence easier to maintain microservice 
+rewamps -> easy on microservice 
+debugging -> monolith can be easier slightly 
+ux -> micro services can be easier
+
+How do fe and be communicate ? using apis 
+*/
+
+/*e2
+Product Requirement 
+To make connection and make project
+create an account 
+login
+update your profile 
+feed page or explore developer user
+send connection req or ignore 
+see our matches , 
+see request we have sent 
+update your profile 
+
+
+Tech Planning 
+2 microservices fe and be 
+be-> Node js and mongo db  
+
+Spend more time on planning gets easier to code 
+LLD
+Db Design 
+
+User->
+firstName, lastName , emailId, password , age , gender 
+make er diagram relationship 
+We need to store relationship of users connecting with each other ~single reponsibility principle  
+connection req ,-> from user id, to user id, status ->completed or pending  or rejected or ignore (cancel) or blocked wont consider it for now 
+
+API Design -> Rest Apis read about it 
+fe and be application how they communicate by calling apis of be 
+What all apis will we need 
+get api -> get data of profile 
+signup api ->post 
+login api ->post 
+update profile api -> put 
+send connection req api -> post
+profile api -> post 
+review pending req-> accep / rej post 
+get -> all req 
+get Connection 
+package vs package lock why 2 diff 
+node_modules .bin folder why ? 
+tilde^->automatically update for minor and patch changs
+caret ~-> auto update for patch changes ig 
+package lock -> what exact version i am using to lock the version
