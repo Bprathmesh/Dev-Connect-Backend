@@ -80,3 +80,39 @@ node_modules .bin folder why ?
 tilde^->automatically update for minor and patch changs
 caret ~-> auto update for patch changes ig 
 package lock -> what exact version i am using to lock the version
+learn about order of routes and how to manage them 
+regular expression
+This route path will match acd and abcd.
+
+app.get('/ab?cd', (req, res) => {
+  res.send('ab?cd')
+})
+This route path will match abcd, abbcd, abbbcd, and so on.
+
+app.get('/ab+cd', (req, res) => {
+  res.send('ab+cd')
+})
+This route path will match abcd, abxcd, abRANDOMcd, ab123cd, and so on.
+
+app.get('/ab*cd', (req, res) => {
+  res.send('ab*cd')
+})
+This route path will match /abe and /abcde.
+
+app.get('/ab(cd)?e', (req, res) => {
+  res.send('ab(cd)?e')
+})
+we can do pattern matching here in the code  , we can use regex matching here , complex routing 
+req query and types of query , dynamic routes jargons multiple route hsndler   , route param and query param 
+one route can have multiple route handler ~ middleware
+goes through middleware chain and then goes to request handler that sends data back 
+middleware because they called in middle of method chain  
+what is middleware  and how js handles request behind the scenes 
+https status codes 
+use and all learn about it ~difference in routing 
+error handling 
+err req res next -> global middleware error catcher think of it ~~ where should we place these on top at bottom or end 
+first connect to db then listen to server why ? because sometimes what can happen is that  we can hit the server and db is stillnot connected v bad 
+
+mongodb creates _id and __v these ids uniquely identify data into db  never mess up with ids in general  we can pass it through express as well  , Just because we can we should not , __V updates version of document 
+db operation always in try catch block and handle responses appropriately 
